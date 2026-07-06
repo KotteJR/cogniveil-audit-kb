@@ -1,0 +1,434 @@
+# Audit KB source registry — single source of truth for fetch + future ingest.
+# phase: now | later — fetch defaults to --phase now
+# connector: cellar | http_file | oscal_git | manual_inbox | xbrl | dataset
+
+sources:
+  # --- EU audit / ESG (Cellar) ---
+  - source_key: eu-dir-2006-43
+    phase: now
+    scope: eu-audit
+    connector: cellar
+    celex: "32006L0043"
+    languages: [en]
+    audit_lane: [external_financial]
+    jurisdiction: EU
+    publisher: EU
+    title: "Directive 2006/43/EC on statutory audits"
+    framework_id: EU-DIR-2006-43
+    effective_date: "2006-06-17"
+    license_tier: free_download
+
+  - source_key: eu-reg-537-2014
+    phase: now
+    scope: eu-audit
+    connector: cellar
+    celex: "32014R0537"
+    languages: [en]
+    audit_lane: [external_financial]
+    jurisdiction: EU
+    publisher: EU
+    title: "Regulation (EU) No 537/2014 on statutory audit of public-interest entities"
+    framework_id: EU-REG-537-2014
+    effective_date: "2014-04-16"
+    license_tier: free_download
+
+  - source_key: eu-dir-2014-56
+    phase: now
+    scope: eu-audit
+    connector: cellar
+    celex: "32014L0056"
+    languages: [en]
+    audit_lane: [external_financial]
+    jurisdiction: EU
+    publisher: EU
+    title: "Directive 2014/56/EU amending Statutory Audit Directive"
+    framework_id: EU-DIR-2014-56
+    effective_date: "2014-05-16"
+    license_tier: free_download
+
+  - source_key: eu-csrd-2022-2464
+    phase: now
+    scope: esg
+    connector: cellar
+    celex: "32022L2464"
+    languages: [en]
+    audit_lane: [esg, external_financial]
+    jurisdiction: EU
+    publisher: EU
+    title: "Directive (EU) 2022/2464 (CSRD)"
+    framework_id: EU-CSRD-2022-2464
+    effective_date: "2022-12-14"
+    license_tier: free_download
+
+  - source_key: eu-esrs-delegated-2023-2772
+    phase: now
+    scope: esg
+    connector: cellar
+    celex: "32023R2772"
+    languages: [en]
+    audit_lane: [esg]
+    jurisdiction: EU
+    publisher: EU
+    title: "Delegated Regulation (EU) 2023/2772 (ESRS)"
+    framework_id: EU-ESRS-2023-2772
+    effective_date: "2023-12-22"
+    license_tier: free_download
+
+  - source_key: eu-dora-2022-2554
+    phase: now
+    scope: eu-audit
+    connector: cellar
+    celex: "32022R2554"
+    languages: [en]
+    audit_lane: [it_cyber, external_financial]
+    jurisdiction: EU
+    publisher: EU
+    title: "Regulation (EU) 2022/2554 (DORA)"
+    framework_id: EU-DORA-2022-2554
+    effective_date: "2022-12-27"
+    license_tier: free_download
+
+  - source_key: eu-nis2-2022-2555
+    phase: now
+    scope: eu-audit
+    connector: cellar
+    celex: "32022L2555"
+    languages: [en]
+    audit_lane: [it_cyber]
+    jurisdiction: EU
+    publisher: EU
+    title: "Directive (EU) 2022/2555 (NIS2)"
+    framework_id: EU-NIS2-2022-2555
+    effective_date: "2022-12-27"
+    license_tier: free_download
+
+  # --- IAASB / IFAC ---
+  - source_key: iaasb-handbook-2025-vol1
+    phase: now
+    scope: iaasb
+    connector: http_file
+    url: "https://ifacweb.blob.core.windows.net/publicfiles/2025-09/IAASB-2025-Handbook-Volume-1.pdf"
+    audit_lane: [external_financial]
+    jurisdiction: international
+    publisher: IAASB
+    title: "IAASB 2025 Handbook Volume 1"
+    framework_id: IAASB-HANDBOOK-V1
+    version: "2025-09"
+    effective_date: "2025-09-01"
+    license_tier: free_download
+
+  - source_key: iaasb-handbook-2025-vol2
+    phase: now
+    scope: iaasb
+    connector: http_file
+    url: "https://ifacweb.blob.core.windows.net/publicfiles/2025-09/IAASB-2025-Handbook-Volume-2.pdf"
+    audit_lane: [external_financial]
+    jurisdiction: international
+    publisher: IAASB
+    title: "IAASB 2025 Handbook Volume 2"
+    framework_id: IAASB-HANDBOOK-V2
+    version: "2025-09"
+    license_tier: free_download
+
+  - source_key: iaasb-handbook-2025-vol3
+    phase: now
+    scope: iaasb
+    connector: http_file
+    url: "https://ifacweb.blob.core.windows.net/publicfiles/2025-09/IAASB-2025-Handbook-Volume-3.pdf"
+    audit_lane: [external_financial, esg]
+    jurisdiction: international
+    publisher: IAASB
+    title: "IAASB 2025 Handbook Volume 3 (includes ISSA 5000)"
+    framework_id: IAASB-HANDBOOK-V3
+    version: "2025-09"
+    license_tier: free_download
+
+  - source_key: iaasb-handbook-2025-vol4
+    phase: now
+    scope: iaasb
+    connector: http_file
+    url: "https://ifacweb.blob.core.windows.net/publicfiles/2025-09/IAASB-2025-Handbook-Volume-4.pdf"
+    audit_lane: [external_financial]
+    jurisdiction: international
+    publisher: IAASB
+    title: "IAASB 2025 Handbook Volume 4"
+    framework_id: IAASB-HANDBOOK-V4
+    version: "2025-09"
+    license_tier: free_download
+
+  - source_key: iaasb-handbook-2025-vol5
+    phase: now
+    scope: iaasb
+    connector: http_file
+    url: "https://ifacweb.blob.core.windows.net/publicfiles/2025-09/IAASB-2025-Handbook-Volume-5.pdf"
+    audit_lane: [external_financial]
+    jurisdiction: international
+    publisher: IAASB
+    title: "IAASB 2025 Handbook Volume 5"
+    framework_id: IAASB-HANDBOOK-V5
+    version: "2025-09"
+    license_tier: free_download
+
+  - source_key: iesba-code-2024
+    phase: now
+    scope: iaasb
+    connector: http_file
+    url: "https://ifacweb.blob.core.windows.net/publicfiles/2024-04/2024-IESBA-Handbook.pdf"
+    audit_lane: [external_financial]
+    jurisdiction: international
+    publisher: IESBA
+    title: "IESBA 2024 International Code of Ethics"
+    framework_id: IESBA-CODE-2024
+    version: "2024"
+    license_tier: free_download
+
+  # --- PCAOB ---
+  - source_key: pcaob-as-standards-booklet
+    phase: now
+    scope: pcaob
+    connector: http_file
+    url: "https://pcaobus.org/oversight/standards/auditing-standards/docs/auditing_standards_adopted_2024.pdf"
+    audit_lane: [external_financial]
+    jurisdiction: US
+    publisher: PCAOB
+    title: "PCAOB Auditing Standards (AS) Booklet"
+    framework_id: PCAOB-AS
+    license_tier: free_download
+
+  - source_key: pcaob-at-standards-booklet
+    phase: now
+    scope: pcaob
+    connector: http_file
+    url: "https://pcaobus.org/oversight/standards/attestation-standards/docs/attestation_standards_adopted_2024.pdf"
+    audit_lane: [external_financial]
+    jurisdiction: US
+    publisher: PCAOB
+    title: "PCAOB Attestation Standards (AT) Booklet"
+    framework_id: PCAOB-AT
+    license_tier: free_download
+
+  # --- Sprint 1.5 stubs ---
+  - source_key: pcaob-inspection-reports
+    phase: now
+    scope: pcaob
+    connector: dataset
+    url: "https://pcaobus.org/oversight/inspections/firm-inspection-reports"
+    audit_lane: [external_financial]
+    jurisdiction: US
+    publisher: PCAOB
+    title: "PCAOB Firm Inspection Reports Dataset"
+    framework_id: PCAOB-INSPECTIONS
+    license_tier: free_download
+
+  - source_key: efrag-esrs-xbrl
+    phase: now
+    scope: esg
+    connector: xbrl
+    url: "https://xbrl.efrag.org/taxonomy/esrs/2023-12-22/esrs_all.xsd"
+    audit_lane: [esg]
+    jurisdiction: EU
+    publisher: EFRAG
+    title: "EFRAG ESRS XBRL Taxonomy"
+    framework_id: EFRAG-ESRS-XBRL
+    license_tier: free_download
+
+  # --- Internal audit ---
+  - source_key: iia-standards-2024
+    phase: now
+    scope: iia
+    connector: http_file
+    url: "https://www.theiia.org/globalassets/documents/content/articles/guidance/global-internal-audit-standards/gias-2024-english.pdf"
+    audit_lane: [internal]
+    jurisdiction: international
+    publisher: IIA
+    title: "Global Internal Audit Standards (2024)"
+    framework_id: IIA-GIAS-2024
+    version: "2024"
+    license_tier: free_download
+
+  # --- IT / cyber ---
+  - source_key: nist-oscal-content
+    phase: now
+    scope: nist-oscal
+    connector: oscal_git
+    repo: "https://github.com/usnistgov/oscal-content.git"
+    ref: main
+    audit_lane: [it_cyber]
+    jurisdiction: US
+    publisher: NIST
+    title: "NIST OSCAL Content Repository"
+    framework_id: NIST-OSCAL
+    license_tier: public_domain
+
+  - source_key: cobit-2019-framework
+    phase: now
+    scope: it-cyber
+    connector: http_file
+    url: "https://www.isaca.org/-/media/files/isacadp/project/isaca/cobit/cobit-2019-framework-introduction-and-methodology.pdf"
+    audit_lane: [it_cyber]
+    jurisdiction: international
+    publisher: ISACA
+    title: "COBIT 2019 Framework Introduction and Methodology"
+    framework_id: COBIT-2019-V1
+    version: "2019"
+    license_tier: free_download
+
+  - source_key: cobit-2019-governance-management
+    phase: now
+    scope: it-cyber
+    connector: http_file
+    url: "https://www.isaca.org/-/media/files/isacadp/project/isaca/cobit/cobit-2019-framework-governance-and-management-objectives.pdf"
+    audit_lane: [it_cyber]
+    jurisdiction: international
+    publisher: ISACA
+    title: "COBIT 2019 Governance and Management Objectives"
+    framework_id: COBIT-2019-V2
+    version: "2019"
+    license_tier: free_download
+
+  - source_key: aicpa-tsc-2022
+    phase: now
+    scope: it-cyber
+    connector: http_file
+    url: "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022"
+    audit_lane: [it_cyber]
+    jurisdiction: US
+    publisher: AICPA
+    title: "Trust Services Criteria with Revised Points of Focus (2022)"
+    framework_id: AICPA-TSC-2022
+    version: "2022"
+    license_tier: free_download
+
+  - source_key: cis-controls-v8
+    phase: now
+    scope: it-cyber
+    connector: http_file
+    url: "https://www.cisecurity.org/controls/v8"
+    audit_lane: [it_cyber]
+    jurisdiction: international
+    publisher: CIS
+    title: "CIS Controls v8"
+    framework_id: CIS-CONTROLS-V8
+    version: "8"
+    license_tier: free_download
+
+  - source_key: pci-dss-v4-summary
+    phase: now
+    scope: it-cyber
+    connector: http_file
+    url: "https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0_1.pdf"
+    audit_lane: [it_cyber]
+    jurisdiction: international
+    publisher: PCI SSC
+    title: "PCI DSS v4.0.1"
+    framework_id: PCI-DSS-V4
+    version: "4.0.1"
+    license_tier: free_download
+
+  # --- ESG ---
+  - source_key: gri-standards-2021
+    phase: now
+    scope: gri
+    connector: http_file
+    url: "https://www.globalreporting.org/content/dam/gri/downloads/standards/GRI-Universal-Standards-2021.pdf"
+    audit_lane: [esg]
+    jurisdiction: international
+    publisher: GRI
+    title: "GRI Universal Standards 2021"
+    framework_id: GRI-UNIVERSAL-2021
+    version: "2021"
+    license_tier: free_download
+
+  - source_key: ifrs-s1-general
+    phase: now
+    scope: esg
+    connector: http_file
+    url: "https://www.ifrs.org/content/dam/ifrs/publications/html-standards-issb/english/2023/issued/issb-2023-s1-general-requirements-for-disclosure-of-sustainability-related-financial-information.html"
+    expected_filename: content.html
+    audit_lane: [esg]
+    jurisdiction: international
+    publisher: IFRS Foundation
+    title: "IFRS S1 General Requirements"
+    framework_id: IFRS-S1
+    license_tier: free_download
+
+  - source_key: ifrs-s2-climate
+    phase: now
+    scope: esg
+    connector: http_file
+    url: "https://www.ifrs.org/content/dam/ifrs/publications/html-standards-issb/english/2023/issued/issb-2023-s2-climate-related-disclosures.html"
+    expected_filename: content.html
+    audit_lane: [esg]
+    jurisdiction: international
+    publisher: IFRS Foundation
+    title: "IFRS S2 Climate-related Disclosures"
+    framework_id: IFRS-S2
+    license_tier: free_download
+
+  # --- MENA / GCC ---
+  - source_key: gcc-adaa-publications
+    phase: now
+    scope: gcc
+    connector: http_file
+    url: "https://www.adaa.gov.ae/en/publications"
+    audit_lane: [internal, external_financial]
+    jurisdiction: AE
+    publisher: ADAA
+    title: "ADAA Publications Portal"
+    framework_id: ADAA-PUBLICATIONS
+    license_tier: free_download
+
+  - source_key: gcc-socpa-standards
+    phase: now
+    scope: gcc
+    connector: http_file
+    url: "https://www.socpa.org.sa/English/ProfessionalStandards/Pages/default.aspx"
+    audit_lane: [external_financial]
+    jurisdiction: SA
+    publisher: SOCPA
+    title: "SOCPA Professional Standards"
+    framework_id: SOCPA-STANDARDS
+    license_tier: free_download
+
+  # --- Purchased ISO (manual inbox) ---
+  - source_key: iso-27001-2022
+    phase: now
+    scope: manual-inbox
+    connector: manual_inbox
+    inbox_filename: iso-27001-2022.pdf
+    expected_filename: content.pdf
+    audit_lane: [it_cyber]
+    jurisdiction: international
+    publisher: ISO/IEC
+    title: "ISO/IEC 27001:2022"
+    framework_id: ISO-27001-2022
+    version: "2022"
+    license_tier: purchased
+
+  - source_key: iso-27002-2022
+    phase: now
+    scope: manual-inbox
+    connector: manual_inbox
+    inbox_filename: iso-27002-2022.pdf
+    expected_filename: content.pdf
+    audit_lane: [it_cyber]
+    jurisdiction: international
+    publisher: ISO/IEC
+    title: "ISO/IEC 27002:2022"
+    framework_id: ISO-27002-2022
+    version: "2022"
+    license_tier: purchased
+
+  # --- Phase Later (registered, skipped by default) ---
+  - source_key: coso-icif-2013
+    phase: later
+    scope: grc
+    connector: manual_inbox
+    inbox_filename: coso-icif-2013.pdf
+    expected_filename: content.pdf
+    audit_lane: [grc]
+    jurisdiction: international
+    publisher: COSO
+    title: "COSO Internal Control Integrated Framework (2013)"
+    framework_id: COSO-ICIF-2013
+    license_tier: purchased

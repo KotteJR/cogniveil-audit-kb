@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cogniveil-audit-kb"
+version = "0.1.0"
+description = "Audit knowledge base pipeline — fetch, ingest, and publish authoritative audit corpus sources"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "gitpython>=3.1",
+    "httpx>=0.27",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-httpx>=0.30"]
+
+[project.scripts]
+audit-kb-fetch = "fetch.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fetch*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

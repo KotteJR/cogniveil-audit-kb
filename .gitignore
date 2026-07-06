@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual env
+.venv/
+venv/
+
+# Staging corpus (downloaded artifacts)
+staging/
+
+# Test / IDE
+.pytest_cache/
+.env
+.env.local
+.vscode/
+.idea/
+.DS_Store
